@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Incentivos</title>
+    <link rel="stylesheet" href="_css/folha.css">
+</head>
+<body>
+    <header id="cabecalho">
+        <h1>Calculadora do Componente Fixo da APS</h1>
+        <h3>Por Márcio Carvalho Fontenele, assessor da Secretaria Municipal de Granja, Ceará.</h3>
+    </header><!-- cabecalho -->
+    <label for="selectEstado">Selecione o Estado:</label>
+    <select id="selectEstado">
+        <option value="">Selecione um estado</option>
+    </select>
+    <br>
+    <label for="selectMunicipio">Selecione o Município:</label>
+    <select id="selectMunicipio">
+        <option value="">Selecione um município</option>
+    </select>
+    <br>
+    <label for="numESF">Número de eSF:</label>
+    <input type="number" id="numESF" value="0">
+    <br>
+    <label for="numEAP30">Número de eAP 30h:</label>
+    <input type="number" id="numEAP30" value="0">
+    <br>
+    <label for="numEAP20">Número de eAP 20h:</label>
+    <input type="number" id="numEAP20" value="0">
+    <br>
+    <label for="numMedicos">Número de Médicos do Mais Médicos com coparticipação:</label>
+    <input type="number" id="numMedicos" value="0">
+    <br>
+    <label for="valorCoparticipacao">Valor da coparticipação do Mais Médicos:</label>
+    <input type="text" id="valorCoparticipacao" value="0">
+    <br>
+    <button onclick="calcularIncentivos()">Calcular</button>
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+    <footer>
+        © 2024 Márcio Carvalho Fontenele
+        <div id="elemento"></div>
+    </footer>
+
+   <script src="javascript/teste.js"></script>
+</body>
+</html>
