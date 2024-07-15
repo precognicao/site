@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #FFFFFF;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #FFFFFF;
+        }
+        h1 {
+            color: black;
+        }
+        .result {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            background-color: #EE1133;
+            color: #FFFFFF;
+            font-weight: bold;
+            
+        }
+        button {
+            background-color: #FFA500;
+            color: #FFFFFF;
+            font-weight: bolder;
+            font-size: 20px;
+            border: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.8s ease;
+        }
+        button:hover {
+            background-color: #FFB864;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diagnóstico de sífilis por análise laboratorial</h1>
+        <div>
+            <button onclick="diagnostico(true, true)">Treponêmico Reagente + Não Treponêmico Reagente</button>
+            <button onclick="diagnostico(true, false)">Treponêmico Reagente + Não Treponêmico Não Reagente</button>
+            <button onclick="diagnostico(false, true)">Treponêmico Não Reagente + Não Treponêmico Reagente</button>
+            <button onclick="diagnostico(false, false)">Treponêmico Não Reagente + Não Treponêmico Não Reagente</button>
+        </div>
+        <div id="resultado" class="result"></div>
+    </div>
+
+    <script>
+        function diagnostico(treponemico, naoTreponemico) {
+            let mensagem = "";
+            if (treponemico && naoTreponemico) {
+                mensagem = "Sífilis Confirmada: A combinação de um teste treponêmico reagente com um teste não treponêmico reagente confirma o diagnóstico de sífilis.";
+            } else if (treponemico && !naoTreponemico) {
+                mensagem = "Repetir Teste Treponêmico: Recomenda-se a repetição do teste treponêmico utilizando uma metodologia diferente.";
+            } else if (!treponemico && naoTreponemico) {
+                mensagem = "Repetir Teste Treponêmico: A divergência nos resultados exige a repetição do teste treponêmico com uma metodologia diferente.";
+            } else {
+                mensagem = "Ausência de Infecção ou Janela Imunológica: Esta combinação de resultados indica a ausência de infecção ou a possibilidade de o paciente estar no período de janela imunológica.";
+            }
+            document.getElementById("resultado").innerHTML = mensagem;
+        }
+    </script>
+</body>
+</html>
